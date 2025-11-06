@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Transacción</title>
+</head>
+
+<body>
+    <h1>Detalles de la Transacción</h1>
+
+    {% if detalles %}
+    <p><strong>Monto:</strong> ${{ detalles.amount }}</p>
+    <p><strong>Estado:</strong> {{ detalles.status }}</p>
+    <p><strong>Orden de Compra:</strong> {{ detalles.buyOrder }}</p>
+    <p><strong>Session ID:</strong> {{ detalles.sessionId }}</p>
+    <p><strong>Número de Tarjeta:</strong> **** **** **** {{ detalles.cardDetail.cardNumber }}</p>
+    <p><strong>Fecha de Transacción:</strong> {{ detalles.transactionDate }}</p>
+    <p><strong>Código de Autorización:</strong> {{ detalles.authorizationCode }}</p>
+    {% else %}
+    <p>No se encontraron detalles de la transacción.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Volver al inicio</a>
+   
+</body>
+
+</html>

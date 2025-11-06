@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería Ferremas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ff7a28 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .container-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-tools"></i> Ferretería Ferremas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('vista') }}">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h1 class="text-center">Formulario de Pago</h1>
+                <form id="formPago" method="post">
+                    <div class="mb-3">
+                        <label for="numRun" class="form-label">Número de RUN</label>
+                        <input type="number" class="form-control" id="numRun" name="numRun" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dvRun" class="form-label">Dígito Verificador (DV)</label>
+                        <input type="text" class="form-control" id="dvRun" name="dvRun" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="p_Nombre" class="form-label">Primer Nombre</label>
+                        <input type="text" class="form-control" id="p_Nombre" name="p_Nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="s_Nombre" class="form-label">Segundo Nombre</label>
+                        <input type="text" class="form-control" id="s_Nombre" name="s_Nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="a_Paterno" class="form-label">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="a_Paterno" name="a_Paterno" required>
+                    </div>   
+
+
+                    <div class="mb-3">
+                        <label for="a_Materno" class="form-label">Apellido Materno</label>
+                        <input type="text" class="form-control" id="a_Materno" name="a_Materno" required>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefonoCliente" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" required>
+                    </div>
+
+                    <h3>Dirección y Ubicación</h3>
+                    
+                     Icono de Carrito de Comprass
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="region" class="form-label">Región</label>
+                        <select class="form-select" id="region" name="codRegion" required>
+                            <option value="">Seleccione una región</option>
+                            {% for region in regiones %}
+                                <option value="{{ region.codRegion }}">{{ region.nombreRegion }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="provincia" class="form-label">Provincia</label>
+                        <select class="form-select" id="provincia" name="codProvincia" required>
+                            <option value="">Seleccione una provincia</option>
+                            {% for provincia in provincias %}
+                                <option value="{{ provincia.codProvincia }}" data-region="{{ provincia.codRegion }}">{{ provincia.nombreProvincia }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comuna" class="form-label">Comuna</label>
+                        <select class="form-select" id="comuna" name="codComuna" required>
+                            <option value="">Seleccione una comuna</option>
+                            {% for comuna in comunas %}
+                                <option value="{{ comuna.codComuna }}" data-provincia="{{ comuna.codProvincia }}" data-region="{{ comuna.codRegion }}">{{ comuna.nombreComuna }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div id="detalleCompra"></div>
+                    <input type="hidden" id="productoId" name="productoId">
+                    <input type="hidden" id="montoPagar" name="montoPagar">
+                    <button type="submit" class="btn btn-primary w-100">Realizar Pago</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+ 
+    
+    
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Ferretería Ferremas. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/pago.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

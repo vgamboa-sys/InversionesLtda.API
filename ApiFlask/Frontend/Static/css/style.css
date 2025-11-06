@@ -1,0 +1,348 @@
+
+#lista{
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+
+#final{
+    margin-top: 13.6rem;
+}
+
+#compra{
+    justify-content: center;
+    width: 30rem;
+}
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar */
+
+
+.navbar-brand img {
+    width: 200px;
+    height: auto;
+    padding-top: 20px;
+    margin-left: 40px;
+}
+
+.navbar-nav .nav-link {
+    color: black; /* Color dorado para los enlaces */
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.nav-item {
+    position: relative;
+    font-size: 24px;
+}
+
+.nav-item .nav-link::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f8b400;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-item .nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-item a {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-item .bi-cart {
+    color: black;
+    font-size: 1.4rem;
+}
+
+#contador-carrito {
+    font-size: 0.8rem;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #f8b400;
+    color: #1f1f1f;
+}
+
+#carrito{
+    margin-right: 100px;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+
+#bolsa{
+    height: 40px;
+    width: 25px;
+}
+
+/* Carousel */
+.carousel-item img {
+    max-height: 550px;
+    object-fit: cover;
+}
+
+/* Productos */
+
+
+#tarjeta .card {
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+#tarjeta .card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+
+/* Footer */
+footer {
+
+    margin-top: 8rem;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    height: 7rem;
+}
+
+/* Carrito de compras */
+
+/* Estilo para los indicadores económicos */
+#indicadoresEconomicos {
+    margin-top: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#indicadoresEconomicos .h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+#indicadoresEconomicos p {
+    margin: 0;
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Estilo para el dropdown */
+.dropdown-toggle {
+    background-color: #ff7a28;
+    border: 1px solid #f8b400;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.dropdown-menu {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.dropdown-menu-end {
+    min-width: 300px;
+}
+
+.dropdown-menu a {
+    color: #343a40;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Botón de convertir */
+#convertButton {
+    background-color: #f8b400;
+    border-color: #f8b400;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+#convertButton:hover {
+    background-color: #ff7a28;
+    border-color: #ff7a28;
+}
+
+/* Input de cantidad */
+#amount {
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+#fromCurrency {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+/* Estilos generales para las secciones */
+.section {
+    background-color: #f4f4f4;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+/* Colores específicos para cada sección */
+.historia {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+.mision {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+.vision {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+.valores {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+.equipo {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+.elegirnos {
+    background-color: #e7e7e7;
+    color: #ff7a28;
+}
+
+/* Estilo para los títulos */
+h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los párrafos */
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Estilo para el contenedor de la sección */
+#quienes-somos {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+/* Slogan */
+#slogan {
+    font-style: italic;
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+
+/* Responsive */
+@media (max-width: 500px) {
+    #indicadoresEconomicos {
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .dropdown-menu {
+        padding: 10px;
+    }
+
+    #convertButton {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    #amount, #fromCurrency {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        color: #fff;
+        border-color: #fff;
+    }
+}

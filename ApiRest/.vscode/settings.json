@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6488aeda-7403-49d7-89f6-10b79a53a303/resourceGroups/FerreMasDb/providers/Microsoft.Web/sites/FerreMasControllers",
+    "appService.deploySubpath": "ApiRest\\bin\\Publish"
+}
