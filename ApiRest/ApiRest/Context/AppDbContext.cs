@@ -10,13 +10,12 @@ namespace ApiRest.Context
         public DbSet<Region> Region { get; set; }
         public DbSet<Provincia> Provincia { get; set; }
         public DbSet<Comuna> Comuna { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
+        
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Stock> Stock { get; set; }
         public DbSet<Sucursal> Sucursal { get; set; }
         public DbSet<Tarjeta> Tarjeta { get; set; }
-        public DbSet<Boleta> Boleta { get; set; }
-        public DbSet<DetalleBoleta> DetalleBoleta { get; set; }
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,30 +53,7 @@ namespace ApiRest.Context
                 .HasForeignKey(c => new { c.CodRegion, c.CodProvincia })
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Configuración de Cliente
-            modelBuilder.Entity<Cliente>()
-                .Property(cl => cl.NumRun)
-                .ValueGeneratedNever();
-            modelBuilder.Entity<Cliente>()
-                .HasKey(cl => cl.NumRun);
-
-            modelBuilder.Entity<Cliente>()
-                .HasOne(cl => cl.Region)
-                .WithMany(r => r.Cliente)
-                .HasForeignKey(cl => cl.CodRegion)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Cliente>()
-                .HasOne(cl => cl.Provincia)
-                .WithMany(p => p.Cliente)
-                .HasForeignKey(cl => new { cl.CodRegion, cl.CodProvincia })
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Cliente>()
-                .HasOne(cl => cl.Comuna)
-                .WithMany(c => c.Cliente)
-                .HasForeignKey(cl => new { cl.CodRegion, cl.CodProvincia, cl.CodComuna })
-                .OnDelete(DeleteBehavior.Restrict);
+    
 
             // Configuración de Sucursal
             modelBuilder.Entity<Sucursal>()
@@ -126,57 +102,7 @@ namespace ApiRest.Context
                 .Property(t => t.CodTransaccion)
                 .IsRequired()
                 .HasMaxLength(50) // Ajusta el tamaño según la longitud de BuyOrder
-                .ValueGeneratedNever(); // Evita que EF intente generarlo automáticamente
-
-            modelBuilder.Entity<Tarjeta>()
-                .HasMany(t => t.Boleta)
-                .WithOne(b => b.Tarjeta)
-                .HasForeignKey(b => b.CodTransaccion)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            // Configuración de Boleta
-            modelBuilder.Entity<Boleta>()
-                .Property(b => b.CodBoleta)
-                .ValueGeneratedNever();
-            modelBuilder.Entity<Boleta>()
-                .HasKey(b => b.CodBoleta);
-            modelBuilder.Entity<Boleta>()
-                .Property(b => b.RunCliente)
-                .HasMaxLength(12) // Tamaño típico para un RUN con puntos y guion
-                .IsRequired(); // Define el campo como obligatorio
-            modelBuilder.Entity<Boleta>()
-                .Property(b => b.Total)
-                .IsRequired(); // Define el campo como obligatorio
-
-
-            // Configuración de DetalleBoleta
-            modelBuilder.Entity<Boleta>()
-                .Property(b => b.RunCliente)
-                .HasMaxLength(12)
-                .IsRequired();
-
-            modelBuilder.Entity<Boleta>()
-                .Property(b => b.Total)
-                .IsRequired();
-
-
-            modelBuilder.Entity<DetalleBoleta>()
-                .Property(db => db.CodDetalle)
-                .ValueGeneratedNever();
-            modelBuilder.Entity<DetalleBoleta>()
-                .HasKey(db => db.CodDetalle);
-
-            modelBuilder.Entity<DetalleBoleta>()
-                .HasOne(db => db.Boleta)
-                .WithMany(b => b.DetalleBoleta)
-                .HasForeignKey(db => db.CodBoleta)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<DetalleBoleta>()
-                .HasOne(db => db.Producto)
-                .WithMany(p => p.DetalleBoleta)
-                .HasForeignKey(db => db.CodProducto)
-                .OnDelete(DeleteBehavior.Restrict);
+                .ValueGeneratedNever(); // Evita que EF intente generarlo dtomáticamente
 
 
 

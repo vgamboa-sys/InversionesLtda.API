@@ -13,7 +13,7 @@
         // Relación con Comuna
         public ICollection<Comuna> Comuna { get; set; }
 
-        public ICollection<Cliente> Cliente { get; set; }
+        
 
 
     }

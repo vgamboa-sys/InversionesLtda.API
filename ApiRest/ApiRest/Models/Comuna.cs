@@ -9,7 +9,7 @@
 
         public Provincia Provincia { get; set; }
 
-        public ICollection<Cliente> Cliente { get; set; }
+        
         public ICollection<Sucursal> Sucursal { get; set; } // Relación con Sucursal
 
     }

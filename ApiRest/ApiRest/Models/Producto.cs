@@ -9,6 +9,6 @@
 
         // Relación con Stock
         public ICollection<Stock> Stock { get; set; } // Un producto puede estar en varios stocks
-        public ICollection<DetalleBoleta> DetalleBoleta { get; set; }
+        
     }
 }

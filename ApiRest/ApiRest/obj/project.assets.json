@@ -10755,11 +10755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Escritorio\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
+      "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
       "projectName": "ApiRest",
-      "projectPath": "C:\\Users\\victo\\OneDrive\\Escritorio\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
+      "projectPath": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
       "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\victo\\OneDrive\\Escritorio\\InversionesLtda.API\\ApiRest\\ApiRest\\obj\\",
+      "outputPath": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

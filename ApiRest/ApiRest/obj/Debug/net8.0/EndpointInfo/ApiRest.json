@@ -5,191 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Cliente": {
-      "get": {
-        "tags": [
-          "Cliente"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Cliente"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Cliente/{id}": {
-      "get": {
-        "tags": [
-          "Cliente"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClienteDto"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Cliente"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Cliente"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Comuna": {
       "get": {
         "tags": [
@@ -883,37 +698,6 @@
           }
         }
       }
-    },
-    "/api/Ventas/RealizarVenta": {
-      "post": {
-        "tags": [
-          "Ventas"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/VentaDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/VentaDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/VentaDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
   },
   "components": {
@@ -928,56 +712,6 @@
           "amount": {
             "type": "number",
             "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ClienteDto": {
-        "type": "object",
-        "properties": {
-          "numRun": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "dvRun": {
-            "type": "string",
-            "nullable": true
-          },
-          "p_Nombre": {
-            "type": "string",
-            "nullable": true
-          },
-          "s_Nombre": {
-            "type": "string",
-            "nullable": true
-          },
-          "a_Paterno": {
-            "type": "string",
-            "nullable": true
-          },
-          "a_Materno": {
-            "type": "string",
-            "nullable": true
-          },
-          "correo": {
-            "type": "string",
-            "nullable": true
-          },
-          "direccion": {
-            "type": "string",
-            "nullable": true
-          },
-          "codRegion": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "codProvincia": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "codComuna": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1040,28 +774,6 @@
           "return_url": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DetalleVentaDto": {
-        "type": "object",
-        "properties": {
-          "codProducto": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "codSucursal": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "cantidad": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "precioUnitario": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1185,31 +897,6 @@
           },
           "nombreTransaccion": {
             "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "VentaDto": {
-        "type": "object",
-        "properties": {
-          "codBoleta": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "codTransaccion": {
-            "type": "string",
-            "nullable": true
-          },
-          "runCliente": {
-            "type": "string",
-            "nullable": true
-          },
-          "detalleProductos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DetalleVentaDto"
-            },
             "nullable": true
           }
         },

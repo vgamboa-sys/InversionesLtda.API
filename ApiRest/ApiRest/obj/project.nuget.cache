@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NpbBGPqrusM=",
+  "dgSpecHash": "6n4bD0Wez7k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\victo\\OneDrive\\Escritorio\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
+  "projectFilePath": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\ApiRest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\victo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
