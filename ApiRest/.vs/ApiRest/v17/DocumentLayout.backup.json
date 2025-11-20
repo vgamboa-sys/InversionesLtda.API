@@ -106,8 +106,7 @@
               "RelativeToolTip": "ApiRest\\Dto\\Response\\BoletaDto.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAA9wBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T10:18:58.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T10:18:58.483Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "ApiRest\\Models\\ComunaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T10:17:29.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T10:17:29.064Z"
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "RelativeToolTip": "ApiRest\\Dto\\Request\\BoletaRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:33:06.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:33:06.339Z"
             },
             {
               "$type": "Document",
@@ -158,8 +155,7 @@
               "RelativeToolTip": "ApiRest\\Controllers\\ClienteController.cs",
               "ViewState": "AgIAAJ0AAAAAAAAAAAAwwM8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:29:44.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:29:44.201Z"
             },
             {
               "$type": "Document",
@@ -171,8 +167,7 @@
               "RelativeToolTip": "ApiRest\\Dto\\Request\\ClienteDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:28:44.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:28:44.554Z"
             },
             {
               "$type": "Document",
@@ -184,8 +179,7 @@
               "RelativeToolTip": "ApiRest\\Dto\\Request\\TransbankRequest .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:11:41.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:11:41.718Z"
             },
             {
               "$type": "Document",
@@ -197,8 +191,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Tarjeta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:10:09.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:10:09.729Z"
             },
             {
               "$type": "Document",
@@ -210,8 +203,7 @@
               "RelativeToolTip": "ApiRest\\Models\\TarjetaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:10:06.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:10:06.789Z"
             },
             {
               "$type": "Document",
@@ -223,8 +215,7 @@
               "RelativeToolTip": "ApiRest\\Controllers\\TarjetaController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:09:05.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:09:05.57Z"
             },
             {
               "$type": "Document",
@@ -236,8 +227,7 @@
               "RelativeToolTip": "ApiRest\\Migrations\\20251120084826_init.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:48:26.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:48:26.685Z"
             },
             {
               "$type": "Document",
@@ -249,8 +239,7 @@
               "RelativeToolTip": "ApiRest\\Models\\DetalleBoleta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:39:35.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:39:35.801Z"
             },
             {
               "$type": "Document",
@@ -262,8 +251,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Boleta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:39:14.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:39:14.384Z"
             },
             {
               "$type": "Document",
@@ -275,8 +263,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:38:40.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:38:40.231Z"
             },
             {
               "$type": "Document",
@@ -288,8 +275,7 @@
               "RelativeToolTip": "ApiRest\\Models\\UsuarioRol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:36:30.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:36:30.637Z"
             },
             {
               "$type": "Document",
@@ -301,8 +287,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Rol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:36:07.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:36:07.606Z"
             },
             {
               "$type": "Document",
@@ -314,8 +299,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Comuna.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:34:24.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:34:24.988Z"
             },
             {
               "$type": "Document",
@@ -327,8 +311,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T08:34:20.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T08:34:20.466Z"
             },
             {
               "$type": "Document",
@@ -340,8 +323,7 @@
               "RelativeToolTip": "ApiRest\\Context\\AppDbContext.cs",
               "ViewState": "AgIAALcAAAAAAAAAAAAuwMkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T07:15:57.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T07:15:57.379Z"
             }
           ]
         }

@@ -82,14 +82,12 @@
                     <div class="mb-3">
                         <label for="a_Paterno" class="form-label">Apellido Paterno</label>
                         <input type="text" class="form-control" id="a_Paterno" name="a_Paterno" required>
-                    </div>   
-
+                    </div>
 
                     <div class="mb-3">
                         <label for="a_Materno" class="form-label">Apellido Materno</label>
                         <input type="text" class="form-control" id="a_Materno" name="a_Materno" required>
                     </div>
-
 
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo Electrónico</label>
@@ -102,8 +100,7 @@
                     </div>
 
                     <h3>Dirección y Ubicación</h3>
-                    
-                     Icono de Carrito de Comprass
+
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección</label>
                         <input type="text" class="form-control" id="direccion" name="direccion" required>
@@ -139,22 +136,25 @@
                         </select>
                     </div>
 
-                    <div id="detalleCompra"></div>
+                    <!-- Detalle del carrito -->
+                    <div id="detalleCompra" class="mb-3"></div>
+
+                    <!-- Hidden inputs -->
                     <input type="hidden" id="productoId" name="productoId">
                     <input type="hidden" id="montoPagar" name="montoPagar">
+                    <!-- NUEVO: carrito completo como JSON -->
+                    <input type="hidden" id="carrito_json" name="carrito_json">
+
                     <button type="submit" class="btn btn-primary w-100">Realizar Pago</button>
                 </form>
             </div>
         </div>
     </div>
-    
- 
-    
-    
+
     <footer class="text-center mt-5">
         <p>&copy; 2024 Ferretería Ferremas. Todos los derechos reservados.</p>
     </footer>
-    
+
     <script src="{{ url_for('static', filename='js/pago.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

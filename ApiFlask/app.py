@@ -3,6 +3,7 @@ import requests
 import urllib3
 import string
 import random
+import json  # 👈 importante
 
 # Flask config
 app = Flask(__name__, template_folder='Frontend', static_folder='Frontend/Static/css')
@@ -100,6 +101,19 @@ def pago():
         return f"Error de conexión: {e}"
 
     if request.method == 'POST':
+        # 🔹 Carrito real enviado desde pago.html en carrito_json (hidden)
+        carrito_json = request.form.get('carrito_json', '[]')
+        try:
+            carrito = json.loads(carrito_json)
+        except json.JSONDecodeError:
+            carrito = []
+
+        if not carrito:
+            return jsonify({"error": "El carrito está vacío o no se pudo leer."}), 400
+
+        # Guardamos el carrito en sesión para usarlo al confirmar la transacción
+        session['carrito'] = carrito
+
         # 🔹 Monto total a pagar (proviene del formulario, calculado en frontend)
         montoPagar = float(request.form['montoPagar'])
 
@@ -219,10 +233,16 @@ def confirmar_transaccion(token):
 
         # 4️⃣ Crear la Boleta en la API usando BoletaController
         cliente_session = session.get('cliente')
+        carrito = session.get('carrito', [])
 
         if not cliente_session:
             return jsonify({
                 "error": "No se encontraron datos de cliente en sesión. No se puede emitir la boleta."
+            }), 400
+
+        if not carrito:
+            return jsonify({
+                "error": "No se encontró el carrito en sesión. No se puede emitir la boleta."
             }), 400
 
         num_run = cliente_session.get("numRun")
@@ -232,11 +252,17 @@ def confirmar_transaccion(token):
         if not num_run or not dv_run:
             return jsonify({"error": "Datos de RUN del cliente incompletos."}), 400
 
-        # ⚠️ Por ahora, usamos una sucursal fija (1). Idealmente, esto debe venir del carrito o selección del usuario.
-        cod_sucursal = 1
+        # Asumimos que todos los ítems salen de la misma sucursal (la del primer item)
+        cod_sucursal = carrito[0].get('codSucursal', 1)
 
-        # ⚠️ Por ahora, los productos también están fijos como ejemplo.
-        # TODO: Aquí debes tomar el detalle real del carrito desde el frontend
+        # Construir los detalles para Boleta (solo codProducto y cantidad, sucursal va en la boleta)
+        detalles = []
+        for item in carrito:
+            detalles.append({
+                "codProducto": item["codProducto"],
+                "cantidad": item["cantidad"]
+            })
+
         datos_boleta = {
             "numRun": num_run,
             "dvRun": dv_run,
@@ -244,12 +270,7 @@ def confirmar_transaccion(token):
             "esInvitada": True,          # cuando tengas login, podrás cambiar esto
             "codSucursal": cod_sucursal,
             "codTransaccion": cod_transaccion,
-            "detalles": [
-                {
-                    "codProducto": 1,
-                    "cantidad": 1
-                }
-            ]
+            "detalles": detalles
         }
 
         response_boleta = requests.post(boleta_url, json=datos_boleta, verify=False)
