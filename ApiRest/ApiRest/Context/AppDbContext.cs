@@ -122,6 +122,11 @@ namespace ApiRest.Context
                 .IsRequired()
                 .HasMaxLength(50) // Ajusta el tamaño según la longitud de BuyOrder
                 .ValueGeneratedNever(); // Evita que EF intente generarlo automáticamente
+                                        // 👇 NUEVO (opcional, pero ordenado)
+
+            modelBuilder.Entity<Tarjeta>()
+                .Property(t => t.Token)
+                .HasMaxLength(255);
 
             // ===========================================================
             // 🔹 NUEVOS MODELOS

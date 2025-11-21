@@ -39,7 +39,8 @@ public class TarjetaController : ControllerBase
         {
             CodTransaccion = tarjetaDto.CodTransaccion,
             NumTarjeta = tarjetaDto.NumTarjeta,
-            NombreTransaccion = tarjetaDto.NombreTransaccion
+            NombreTransaccion = tarjetaDto.NombreTransaccion,
+            Token = tarjetaDto.Token  // 👈 NO PUEDE SER NULL
         };
 
         _context.Tarjeta.Add(tarjeta);

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiRest.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251120084826_init")]
+    [Migration("20251121083205_init")]
     partial class init
     {
         /// <inheritdoc />

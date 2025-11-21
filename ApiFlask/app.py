@@ -223,13 +223,15 @@ def confirmar_transaccion(token):
             datos_tarjeta = {
                 "codTransaccion": cod_transaccion,
                 "numTarjeta": cod_tarjeta,
-                "nombreTransaccion": "Compra Online"
+                "nombreTransaccion": "Compra Online",
+                "token": token   # 👈 AQUÍ AGREGAMOS EL TOKEN DE TRANSBANK
             }
             response_tarjeta = requests.post(tarjeta_url, json=datos_tarjeta, verify=False)
 
             if response_tarjeta.status_code not in (200, 201):
                 print(f"⚠️ Error al registrar la transacción: {response_tarjeta.status_code}")
                 print(f"🔍 Respuesta del servidor: {response_tarjeta.text}")
+
 
         # 4️⃣ Crear la Boleta en la API usando BoletaController
         cliente_session = session.get('cliente')

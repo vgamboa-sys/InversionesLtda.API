@@ -1192,6 +1192,10 @@
           "nombreTransaccion": {
             "type": "string",
             "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
