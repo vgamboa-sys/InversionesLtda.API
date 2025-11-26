@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{B898B540-2803-4186-A780-C042ED5EAD88}|ApiRest\\ApiRest.csproj|solutionrelative:apirest\\models\\tarjeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\Migrations\\20251121101017_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ApiRest\\Migrations\\20251121101017_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B898B540-2803-4186-A780-C042ED5EAD88}|ApiRest\\ApiRest.csproj|c:\\users\\victo\\onedrive\\escritorio\\tesis repo\\inversionesltda.api\\apirest\\apirest\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B898B540-2803-4186-A780-C042ED5EAD88}|ApiRest\\ApiRest.csproj|solutionrelative:apirest\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B898B540-2803-4186-A780-C042ED5EAD88}|ApiRest\\ApiRest.csproj|c:\\users\\victo\\onedrive\\escritorio\\tesis repo\\inversionesltda.api\\apirest\\apirest\\migrations\\20251121101017_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B898B540-2803-4186-A780-C042ED5EAD88}|ApiRest\\ApiRest.csproj|solutionrelative:apirest\\migrations\\20251121101017_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "ApiRest\\Controllers\\TarjetaController.cs",
               "ToolTip": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\Controllers\\TarjetaController.cs",
               "RelativeToolTip": "ApiRest\\Controllers\\TarjetaController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBgAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T10:31:40.698Z",
               "EditorCaption": ""
@@ -63,12 +63,11 @@
               "RelativeToolTip": "ApiRest\\Models\\TarjetaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:30:19.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:30:19.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "20251121101017_second.cs",
               "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\Migrations\\20251121101017_second.cs",
               "RelativeDocumentMoniker": "ApiRest\\Migrations\\20251121101017_second.cs",
@@ -76,12 +75,11 @@
               "RelativeToolTip": "ApiRest\\Migrations\\20251121101017_second.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:10:17.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:10:17.858Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Escritorio\\TESIS REPO\\InversionesLtda.API\\ApiRest\\ApiRest\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "ApiRest\\Context\\AppDbContext.cs",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "ApiRest\\Context\\AppDbContext.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAuwHIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:09:16.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:09:16.999Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "ApiRest\\Models\\Tarjeta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:08:32.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:08:32.032Z"
             }
           ]
         }

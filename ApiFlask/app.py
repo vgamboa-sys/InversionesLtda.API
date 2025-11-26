@@ -224,14 +224,13 @@ def confirmar_transaccion(token):
                 "codTransaccion": cod_transaccion,
                 "numTarjeta": cod_tarjeta,
                 "nombreTransaccion": "Compra Online",
-                "token": token   # 👈 AQUÍ AGREGAMOS EL TOKEN DE TRANSBANK
+                "token": token  # 👈 TOKEN de WEBPAY guardado en BD
             }
             response_tarjeta = requests.post(tarjeta_url, json=datos_tarjeta, verify=False)
 
             if response_tarjeta.status_code not in (200, 201):
                 print(f"⚠️ Error al registrar la transacción: {response_tarjeta.status_code}")
                 print(f"🔍 Respuesta del servidor: {response_tarjeta.text}")
-
 
         # 4️⃣ Crear la Boleta en la API usando BoletaController
         cliente_session = session.get('cliente')
@@ -288,6 +287,50 @@ def confirmar_transaccion(token):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+# 🔹 NUEVA RUTA: PANEL ADMIN
+@app.route('/admin')
+def admin_dashboard():
+    """
+    Vista de administrador: muestra métricas básicas del negocio.
+    """
+    base_url = 'https://localhost:5000/api'
+    boleta_url = f'{base_url}/Boleta'
+    cliente_url = f'{base_url}/Cliente'
+    producto_url = f'{base_url}/Producto'
+
+    try:
+        resp_boletas = requests.get(boleta_url, verify=False)
+        boletas = resp_boletas.json() if resp_boletas.status_code == 200 else []
+
+        resp_clientes = requests.get(cliente_url, verify=False)
+        clientes = resp_clientes.json() if resp_clientes.status_code == 200 else []
+
+        resp_productos = requests.get(producto_url, verify=False)
+        productos = resp_productos.json() if resp_productos.status_code == 200 else []
+
+        # Métricas básicas
+        total_boletas = len(boletas)
+        total_clientes = len(clientes)
+        total_productos = len(productos)
+
+        # Total ventas (suma de campo "total" si existe)
+        total_ventas = 0
+        for b in boletas:
+            # Ajusta "total" si tu propiedad en C# se llama distinto (Total, MontoTotal, etc.)
+            total_ventas += int(b.get("total", 0))
+
+        return render_template(
+            'admin_dashboard.html',
+            total_boletas=total_boletas,
+            total_clientes=total_clientes,
+            total_productos=total_productos,
+            total_ventas=total_ventas
+        )
+
+    except requests.exceptions.RequestException as e:
+        return f"Error de conexión al cargar panel admin: {e}"
 
 
 if __name__ == '__main__':
