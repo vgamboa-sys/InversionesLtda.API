@@ -1,9 +1,10 @@
-from flask import Flask, jsonify, render_template, request, redirect, session
+from flask import Flask, jsonify, render_template, request, redirect, session, url_for
 import requests
 import urllib3
 import string
 import random
 import json  # 👈 importante
+from functools import wraps
 
 # Flask config
 app = Flask(__name__, template_folder='Frontend', static_folder='Frontend/Static/css')
@@ -13,6 +14,28 @@ app.secret_key = "dev-unishop-secret-key"
 
 # Deshabilitar advertencias de SSL para urllib3 (solo para desarrollo)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'usuario' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        usuario = session.get('usuario')
+        roles = usuario.get('roles', []) if usuario else []
+        if 'Admin' not in roles:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+
 
 
 @app.route('/')
@@ -288,9 +311,145 @@ def confirmar_transaccion(token):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    base_url = 'https://localhost:5000/api'
+    login_url = f'{base_url}/Auth/Login'
+    error = None
 
+    if request.method == 'POST':
+        username_or_email = request.form.get('usernameOrEmail')
+        password = request.form.get('password')
+
+        payload = {
+            "usernameOrEmail": username_or_email,
+            "password": password
+        }
+
+        try:
+            resp = requests.post(login_url, json=payload, verify=False)
+            if resp.status_code == 200:
+                data = resp.json()
+                if data.get("exito"):
+                    user_data = data.get("data", {})
+                    # Guardamos usuario en sesión
+                    session['usuario'] = {
+                        "id": user_data.get("usuarioId"),
+                        "username": user_data.get("username"),
+                        "email": user_data.get("email"),
+                        "roles": user_data.get("roles", [])
+                    }
+
+                    # Si es admin, lo mandamos al panel admin
+                    roles = user_data.get("roles", [])
+                    if "Admin" in roles:
+                        return redirect(url_for('admin_dashboard'))
+                    else:
+                        return redirect(url_for('vista'))
+                else:
+                    error = data.get("mensaje", "Credenciales incorrectas.")
+            else:
+                error = f"Error en el servidor de autenticación ({resp.status_code})."
+        except Exception as e:
+            error = f"Error de conexión al autenticar: {e}"
+
+    return render_template('login.html', error=error)
+
+@app.route('/logout')
+def logout():
+    session.pop('usuario', None)
+    return redirect(url_for('vista'))
 # 🔹 NUEVA RUTA: PANEL ADMIN
+
+
+@app.route('/password_reset', methods=['GET', 'POST'])
+def password_reset():
+    base_url = 'https://localhost:5000/api'
+    reset_url = f'{base_url}/Auth/ResetPassword'
+    error = None
+    success = None
+
+    if request.method == 'POST':
+        username_or_email = request.form.get('usernameOrEmail')
+        new_password = request.form.get('newPassword')
+        new_password2 = request.form.get('newPassword2')
+
+        if new_password != new_password2:
+            error = "Las contraseñas no coinciden."
+        else:
+            payload = {
+                "usernameOrEmail": username_or_email,
+                "newPassword": new_password
+            }
+            try:
+                resp = requests.post(reset_url, json=payload, verify=False)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    if data.get("exito"):
+                        success = "Contraseña actualizada correctamente. Ahora puedes iniciar sesión."
+                    else:
+                        error = data.get("mensaje", "No se pudo actualizar la contraseña.")
+                else:
+                    data = {}
+                    try:
+                        data = resp.json()
+                    except Exception:
+                        pass
+                    error = data.get("mensaje", f"Error al actualizar contraseña ({resp.status_code}).")
+            except Exception as e:
+                error = f"Error de conexión al actualizar contraseña: {e}"
+
+    return render_template('password_reset.html', error=error, success=success)
+
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    base_url = 'https://localhost:5000/api'
+    register_url = f'{base_url}/Auth/Register'
+    error = None
+    success = None
+
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        password2 = request.form.get('password2')
+
+        if password != password2:
+            error = "Las contraseñas no coinciden."
+        else:
+            payload = {
+                "username": username,
+                "email": email,
+                "password": password
+            }
+            try:
+                resp = requests.post(register_url, json=payload, verify=False)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    if data.get("exito"):
+                        success = "Usuario registrado correctamente. Ahora puedes iniciar sesión."
+                    else:
+                        error = data.get("mensaje", "No se pudo registrar el usuario.")
+                else:
+                    data = {}
+                    try:
+                        data = resp.json()
+                    except Exception:
+                        pass
+                    error = data.get("mensaje", f"Error al registrar usuario ({resp.status_code}).")
+            except Exception as e:
+                error = f"Error de conexión al registrar: {e}"
+
+    return render_template('signup.html', error=error, success=success)
+
+
+
+
+
 @app.route('/admin')
+@admin_required
 def admin_dashboard():
     """
     Vista de administrador: muestra métricas básicas del negocio.
